@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Skardu E-commerce Test</title>
+    <meta name="description" content="Learn about our mission to test Skardu's multi-page snapshot generation">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        header { background: #2c3e50; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: white; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: background-color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { background-color: rgba(255,255,255,0.2); }
+        .page-header { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; text-align: center; padding: 4rem 0; }
+        .page-header h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .content { padding: 4rem 0; }
+        .about-section { background: white; padding: 3rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .about-section h2 { color: #2c3e50; margin-bottom: 1rem; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .team-member { text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 8px; }
+        .team-avatar { width: 100px; height: 100px; background: linear-gradient(45deg, #3498db, #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 1rem; }
+        footer { background: #2c3e50; color: white; padding: 2rem 0; margin-top: 3rem; text-align: center; }
+        footer a { color: #3498db; text-decoration: none; margin: 0 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">🛍️ Skardu E-commerce</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>About Our Mission</h1>
+            <p>Testing multi-page snapshot generation with Skardu</p>
+        </div>
+    </section>
+    
+    <section class="content">
+        <div class="container">
+            <div class="about-section">
+                <h2>Our Purpose</h2>
+                <p>This website was specifically created to test Skardu's multi-page snapshot generation system. Unlike traditional websites that use single-page navigation with hash anchors, this site features genuine separate HTML pages with working navigation links.</p>
+                
+                <h2>Why This Matters</h2>
+                <p>Many test websites fail to properly demonstrate multi-page capabilities because they use hash navigation (#about, #contact) which doesn't create separate pages. Our site has real working links that navigate between distinct HTML files, making it perfect for testing SEO snapshot generation systems.</p>
+                
+                <h2>Technical Features</h2>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>8+ separate HTML pages with unique content</li>
+                    <li>Working navigation between all pages</li>
+                    <li>Mobile-first responsive design</li>
+                    <li>SEO-optimized meta tags and structure</li>
+                    <li>Internal linking for page discovery</li>
+                </ul>
+            </div>
+            
+            <div class="about-section">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h3>Alex Developer</h3>
+                        <p><strong>Lead Developer</strong></p>
+                        <p>Specializes in multi-page architecture and SEO optimization.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-avatar">👩‍🎨</div>
+                        <h3>Sarah Designer</h3>
+                        <p><strong>UI/UX Designer</strong></p>
+                        <p>Creates mobile-first designs that work perfectly across devices.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-avatar">👨‍📊</div>
+                        <h3>Mike Analyst</h3>
+                        <p><strong>SEO Specialist</strong></p>
+                        <p>Ensures all pages are optimized for search engine discovery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Skardu E-commerce Test. Multi-page website for testing.</p>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
