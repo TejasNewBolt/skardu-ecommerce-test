@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skardu E-commerce Test - Multi-Page Website</title>
+    <meta name="description" content="Complete multi-page e-commerce website to test Skardu's multi-page snapshot generation system">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header with working navigation */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+        }
+        
+        /* Features */
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 8px;
+            background: #f8f9fa;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Quick links section */
+        .quick-links {
+            padding: 4rem 0;
+            background: #ecf0f1;
+        }
+        
+        .quick-links h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .quick-link {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .quick-link:hover {
+            transform: translateY(-5px);
+            color: #333;
+        }
+        
+        .quick-link-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 2;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 1rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with WORKING navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">🛍️ Skardu E-commerce</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Multi-Page E-commerce Test</h1>
+            <p>Complete website with working navigation to test Skardu's multi-page snapshot generation</p>
+            <a href="shop.html" class="btn">Start Shopping 🛒</a>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Why This Website is Perfect for Testing</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>Multiple Real Pages</h3>
+                    <p>5+ separate HTML pages with proper navigation links between them</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Working Links</h3>
+                    <p>All navigation links actually work and lead to real pages (not hash anchors)</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-First Design</h3>
+                    <p>Responsive design optimized for mobile devices and SEO</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Skardu Ready</h3>
+                    <p>Specifically designed to test multi-page snapshot generation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Links to Test Multi-Page Discovery -->
+    <section class="quick-links">
+        <div class="container">
+            <h2>Test Multi-Page Navigation</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Click these links to visit different pages - Skardu should discover and snapshot all of them!</p>
+            
+            <div class="links-grid">
+                <a href="shop.html" class="quick-link">
+                    <span class="quick-link-icon">🛍️</span>
+                    <h3>Shop Page</h3>
+                    <p>Browse our products</p>
+                </a>
+                
+                <a href="about.html" class="quick-link">
+                    <span class="quick-link-icon">ℹ️</span>
+                    <h3>About Us</h3>
+                    <p>Learn our story</p>
+                </a>
+                
+                <a href="contact.html" class="quick-link">
+                    <span class="quick-link-icon">📞</span>
+                    <h3>Contact</h3>
+                    <p>Get in touch</p>
+                </a>
+                
+                <a href="privacy-policy.html" class="quick-link">
+                    <span class="quick-link-icon">🔒</span>
+                    <h3>Privacy Policy</h3>
+                    <p>Our privacy terms</p>
+                </a>
+                
+                <a href="product-headphones.html" class="quick-link">
+                    <span class="quick-link-icon">🎧</span>
+                    <h3>Product Details</h3>
+                    <p>Sample product page</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer with more navigation links -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="product-headphones.html">Headphones</a></li>
+                        <li><a href="product-watch.html">Smart Watch</a></li>
+                        <li><a href="product-phone.html">Phone Cases</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Testing Info</h3>
+                    <p>This website has <strong>8+ real pages</strong> with working navigation for testing Skardu's multi-page snapshot system.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Skardu E-commerce Test. Built for testing multi-page snapshot generation.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
